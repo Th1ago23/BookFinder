@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ftDlM68tCQnHznaAlXEhVizaH7KFdcrXWBuUloq5VbuCr1ymWVSTuAGxivpu/vwxNEW4z0VQc5anywjAd6LUyQ==",
+  "success": true,
+  "projectFilePath": "C:\\Projetos\\Bookfinder\\Bookfinder\\Bookfinder.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Allcateia - Maike\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512"
+  ],
+  "logs": []
+}
