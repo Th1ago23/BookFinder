@@ -5,46 +5,24 @@
 	ViewData["Title"] = "Books";
 }
 
-<h2>Books</h2>
+<div class="row">
+    <h2>Meus Livros <a class="btn btn-success" type="button" asp-action="Create">+</a></h2>
+      
+<div/>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Author)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">@Html.DisplayFor(modelItem => item.Author) | @Html.DisplayFor(modelItem => item.Category)</h6>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.Comment)</p>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </div>
+        </div>
+    }
+
+

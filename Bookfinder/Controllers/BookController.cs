@@ -20,7 +20,6 @@ namespace Bookfinder.Controllers
             return View();
         }
 
-       
 
         [Route("book")]
         public async Task<IActionResult> Index()
@@ -30,7 +29,7 @@ namespace Bookfinder.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title", "Author", "Category")] Book book)
+        public async Task<IActionResult> Create([Bind("Title", "Author", "Category", "Comment", "Rating", "IsReaded")] Book book)
         {
             try
             {
@@ -106,10 +105,9 @@ namespace Bookfinder.Controllers
         }
 
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("Id", "Title", "Author", "Category")] Book book)
+        public async Task<IActionResult> Edit(long? id, [Bind("Id", "Title", "Author", "Category", "Comment", "Rating", "IsReaded")] Book book)
         {
             if (id != book.Id)
             {

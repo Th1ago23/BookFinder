@@ -18,7 +18,9 @@ namespace Bookfinder.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Category = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: false)
+
                 },
                 constraints: table =>
                 {
