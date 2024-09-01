@@ -9,59 +9,79 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Bookfinder
 build_property.RootNamespace = Bookfinder
-build_property.ProjectDir = C:\Users\Maike Castilho\Source\Repos\BookFinder\Bookfinder\
+build_property.ProjectDir = C:\PROJETOS\BookFinder\Bookfinder\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Maike Castilho\Source\Repos\BookFinder\Bookfinder
+build_property.MSBuildProjectDirectory = C:\PROJETOS\BookFinder\Bookfinder
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Book/Create.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Book/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Book/Delete.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Book/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Book/Details.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Book/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Book/Edit.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Book/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Book/Index.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Book/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Home/Index.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Home/Privacy.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Shared/Error.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/_ViewImports.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/User/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROJETOS/BookFinder/Bookfinder/Views/User/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROJETOS/BookFinder/Bookfinder/Views/User/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROJETOS/BookFinder/Bookfinder/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROJETOS/BookFinder/Bookfinder/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/PROJETOS/BookFinder/Bookfinder/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/_ViewStart.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Maike Castilho/Source/Repos/BookFinder/Bookfinder/Views/Shared/_Layout.cshtml]
+[C:/PROJETOS/BookFinder/Bookfinder/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1lck8sb9li

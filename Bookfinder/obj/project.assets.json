@@ -4200,11 +4200,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Maike Castilho\\Source\\Repos\\BookFinder\\Bookfinder\\Bookfinder.csproj",
+      "projectUniqueName": "C:\\PROJETOS\\BookFinder\\Bookfinder\\Bookfinder.csproj",
       "projectName": "Bookfinder",
-      "projectPath": "C:\\Users\\Maike Castilho\\Source\\Repos\\BookFinder\\Bookfinder\\Bookfinder.csproj",
+      "projectPath": "C:\\PROJETOS\\BookFinder\\Bookfinder\\Bookfinder.csproj",
       "packagesPath": "C:\\Users\\Maike Castilho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Maike Castilho\\Source\\Repos\\BookFinder\\Bookfinder\\obj\\",
+      "outputPath": "C:\\PROJETOS\\BookFinder\\Bookfinder\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Maike Castilho\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -8,9 +8,9 @@ namespace Bookfinder.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly BookContext _context;
+        private readonly MyContext _context;
 
-        public HomeController(BookContext context)
+        public HomeController(MyContext context)
         {
             _context = context;
         }

@@ -1,6 +1,7 @@
 ﻿using Bookfinder.Data;
 using Bookfinder.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -8,46 +9,50 @@ namespace Bookfinder.Controllers
 {
     public class BookController : Controller
     {
-        private readonly BookContext _context;
+        private readonly MyContext _context;
 
-        public BookController(BookContext context)
+        public BookController(MyContext context)
         {
-            _context = context;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public IActionResult Create()
         {
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Name");
             return View();
         }
 
 
-        [Route("book")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Books.OrderBy(i => i.Title).ToListAsync());
+            var books = await _context.Books
+                .Include(b => b.User)
+                .OrderBy(i => i.Title)
+                .ToListAsync();
+            return View(books);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title", "Author", "Category", "Comment", "Rating", "IsReaded")] Book book)
+        public async Task<IActionResult> Create([Bind("Title,Author,Category,Comment,Rating,IsReaded,UserId")] Book book)
         {
-            try
+            ModelState.Remove("User"); // Remove a validação para o campo de navegação 'User'
+            foreach (var state in ModelState)
             {
-                if (ModelState.IsValid)
-                {
-                    _context.Add(book);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction("Index");
-                }
+                Console.WriteLine($"Key: {state.Key}, Errors: {string.Join(", ", state.Value.Errors.Select(e => e.ErrorMessage))}");
             }
-            catch (DbUpdateException)
+            if (ModelState.IsValid)
             {
-                ModelState.AddModelError("", "DEU RUIM"); 
+                _context.Add(book);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
             }
+
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Name", book.UserId);
             return View(book);
         }
-
-        public async Task<IActionResult> Details(long? id)
+         
+    public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
             {
@@ -107,7 +112,7 @@ namespace Bookfinder.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("Id", "Title", "Author", "Category", "Comment", "Rating", "IsReaded")] Book book)
+        public async Task<IActionResult> Edit(long? id, [Bind("Title,Author,Category,Comment,Rating,IsReaded,UserId")] Book book)
         {
             if (id != book.Id)
             {
