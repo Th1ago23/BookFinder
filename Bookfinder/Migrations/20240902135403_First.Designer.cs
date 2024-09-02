@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bookfinder.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20240901205529_Top")]
-    partial class Top
+    [Migration("20240902135403_First")]
+    partial class First
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

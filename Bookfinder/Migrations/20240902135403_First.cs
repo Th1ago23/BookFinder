@@ -5,7 +5,7 @@
 namespace Bookfinder.Migrations
 {
     /// <inheritdoc />
-    public partial class Top : Migration
+    public partial class First : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

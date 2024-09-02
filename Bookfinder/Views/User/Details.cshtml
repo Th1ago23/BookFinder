@@ -1,12 +1,11 @@
 ﻿@model Bookfinder.Models.Dashboard
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
-<h1>Details</h1>
+<h1><strong>Detalhes</strong></h1>
 
-<div>
-    <h4>User</h4>
+<div class="mb-5">
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -15,17 +14,24 @@
          
         </dd>
     </dl>
-    <p>Total de livros: @Model.TotalBooks</p>
-    <p>Já lidos: @Model.TotReadedBooks</p>
-    <p>
-        <strong>Progresso:</strong>
-        <div class="progress-bar">
-            <div class="progress-bar" role="progressbar" style="width: @Model.Progress%;">@Model.Progress%</div>
-        </div>
-    </p>
-
+    <div class="card w-50">
+        <div class="card-body">
+            <p style="font-size:30px">Livros cadastrados: @Model.TotalBooks</p>
+            <p style="font-size:30px">Já lidos: @Model.TotReadedBooks</p>
+            <p>
+                <p style="font-size:30px">Progresso de leitura:</p>
+                   <div style="height: 30px" class="progress ">
+                    <div class="progress-bar" role="progressbar" style="width: @Model.Progress%;">@Model.Progress%</div>
+                </div>
+            </p>
+       </div>
+        
+    </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="">
+    <a href="@Url.Action("Index")" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-left"></i> Voltar
+    </a>
+   
 </div>

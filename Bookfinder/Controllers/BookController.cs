@@ -95,13 +95,14 @@ namespace Bookfinder.Controllers
         }
 
 
-        public async Task<IActionResult> Edit(long? id)
+        public async Task<IActionResult> Edit(int? Id)
         {
-            if (id == null)
+            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Name");
+            if (Id == null)
             {
                 return NotFound();
             }
-            var book = await _context.Books.SingleOrDefaultAsync(i => i.Id == id);
+            var book = await _context.Books.SingleOrDefaultAsync(i => i.Id == Id);
 
             if (book == null)
             {
@@ -113,26 +114,25 @@ namespace Bookfinder.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("Title,Author,Category,Comment,Rating,IsReaded,UserId")] Book book)
+        public async Task<IActionResult> Edit(int? Id, [Bind("Id, Title,Author,Category,Comment,Rating,IsReaded,UserId")] Book book)
         {
-            if (id != book.Id)
+            ModelState.Remove("User");
+
+            if (Id != book.Id)
             {
                 return NotFound();
             }
             if (ModelState.IsValid)
             {
-                try
-                {
+                try{
                     _context.Update(book);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
-                {
-                   
-                        throw;
-                   
+                {    
+                   throw;
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             return View(book);
         }
