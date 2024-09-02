@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bookfinder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca948fbed81416c097a4dc429fa592328a0cd14d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+857868b4cd49d8dde88e39f391e92a711170f0d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bookfinder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bookfinder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

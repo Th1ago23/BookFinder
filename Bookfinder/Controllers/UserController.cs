@@ -71,90 +71,106 @@ namespace Bookfinder.Controllers
         }
 
 
-
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
+            public async Task<IActionResult> Details(int? Id)
             {
-                return NotFound();
-            }
+                int totalBooks = await _context.Books.CountAsync(b => b.UserId == Id);
+                int readedBooks = await _context.Books.CountAsync(b => b.UserId == Id && b.IsReaded);
+                double progress = totalBooks > 0 ? ((double)readedBooks / totalBooks) * 100 : 0;
+                string formatedProgress = progress.ToString("F0");
 
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return View(user);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, User user)
-        {
-            if (id != user.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                var Dashboard = new Dashboard
                 {
-                    if (await _context.Users.AnyAsync(u => u.Name == user.Name && u.Id != user.Id))
-                    {
-                        ModelState.AddModelError("Name", "Nome de usuário já em uso.");
-                        return View(user);
-                    }
+                    TotalBooks = totalBooks,
+                    TotReadedBooks = readedBooks,
+                    Progress = formatedProgress
+                };
 
-                    _context.Update(user);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
+                return View(Dashboard);
+            }
+
+            public async Task<IActionResult> Edit(int? id)
+            {
+                if (id == null)
                 {
-                    if (!UserExists(user.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    return NotFound();
                 }
+
+                var user = await _context.Users.FindAsync(id);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                return View(user);
+            }
+
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            public async Task<IActionResult> Edit(int id, User user)
+            {
+                if (id != user.Id)
+                {
+                    return NotFound();
+                }
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        if (await _context.Users.AnyAsync(u => u.Name == user.Name && u.Id != user.Id))
+                        {
+                            ModelState.AddModelError("Name", "Nome de usuário já em uso.");
+                            return View(user);
+                        }
+
+                        _context.Update(user);
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!UserExists(user.Id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(user);
+            }
+
+            public async Task<IActionResult> Delete(int? id)
+            {
+                if (id == null)
+                {
+                    return NotFound();
+                }
+
+                var user = await _context.Users.FindAsync(id);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                return View(user);
+            }
+
+            [HttpPost, ActionName("Delete")]
+            [ValidateAntiForgeryToken]
+            public async Task<IActionResult> DeleteConfirmed(int id)
+            {
+                var user = await _context.Users.FindAsync(id);
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(user);
-        }
 
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
+            private bool UserExists(int id)
             {
-                return NotFound();
+                return _context.Users.Any(e => e.Id == id);
             }
-
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return View(user);
         }
-
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var user = await _context.Users.FindAsync(id);
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool UserExists(int id)
-        {
-            return _context.Users.Any(e => e.Id == id);
-        }
-    }
-}
+    } 
