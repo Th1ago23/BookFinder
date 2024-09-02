@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<Bookfinder.Models.Book>
 
-
 @{
 	ViewData["Title"] = "Books";
 }
@@ -13,14 +12,20 @@
 
 @foreach (var item in Model)
     {
-        <div class="card" style="width: 18rem;">
+        <div class="card mb-3" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">@Html.DisplayFor(modelItem => item.Author) | @Html.DisplayFor(modelItem => item.Category)</h6>
-                <p class="card-text">@Html.DisplayFor(modelItem => item.Comment)</p>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Autor: @Html.DisplayFor(modelItem => item.Author) | categoria: @Html.DisplayFor(modelItem => item.Category)</h6>
+                <p class="card-text">Lido por: @Html.DisplayFor(modelItem => item.User.Name)</p>
+
+                <p class="card-text">Lido por: @Html.DisplayFor(modelItem => item.Comment)</p>
+
+
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+
+
             </div>
         </div>
     }

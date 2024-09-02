@@ -37,6 +37,7 @@ namespace Bookfinder.Controllers
         public async Task<IActionResult> Create([Bind("Title,Author,Category,Comment,Rating,IsReaded,UserId")] Book book)
         {
             ModelState.Remove("User"); // Remove a validação para o campo de navegação 'User'
+
             foreach (var state in ModelState)
             {
                 Console.WriteLine($"Key: {state.Key}, Errors: {string.Join(", ", state.Value.Errors.Select(e => e.ErrorMessage))}");
