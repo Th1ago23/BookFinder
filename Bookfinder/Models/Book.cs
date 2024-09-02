@@ -9,26 +9,32 @@ namespace Bookfinder.Models
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        [MaxLength(30)]
         public String Title { get; set; }
 
+        [Required]
+        [MaxLength(30)]
         public String Author { get; set; }
 
-       
+        [Required]
+        [MaxLength(20)]
         public String Category { get; set; }
 
-        
+        [Required]
+        [MaxLength(100)]
         public String Comment { get; set; }
 
-        
+        [Required]
         public int Rating { get; set; }
 
+        [Required]
         public bool IsReaded {  get; set; }
 
+        [Required]
         public int UserId { get; set; }
 
-        // Propriedade de navegação
         [ForeignKey("UserId")]
-        [NotMapped]
         public User User { get; set; }
     }
 }

@@ -9,25 +9,45 @@
       
 <div/>
 
+    <div class="container">
+        <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <div class="p-3">
+                        <div class="card mb-3" style="width: 20rem; height: 300px">
+                            <div class="card-body">
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                    @Html.DisplayFor(modelItem => item.Author) | @Html.DisplayFor(modelItem => item.Category)
+                                </h6>
+                                <p class="card-text">Lido por: @Html.DisplayFor(modelItem => item.User.Name)</p>
 
-@foreach (var item in Model)
-    {
-        <div class="card mb-3" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Autor: @Html.DisplayFor(modelItem => item.Author) | categoria: @Html.DisplayFor(modelItem => item.Category)</h6>
-                <p class="card-text">Lido por: @Html.DisplayFor(modelItem => item.User.Name)</p>
+                                <div style="min-height: 120px">
+                                    <p class="card-text">Comentário: @Html.DisplayFor(modelItem => item.Comment)</p>
+                                </div>
 
-                <p class="card-text">Lido por: @Html.DisplayFor(modelItem => item.Comment)</p>
+                                <div class="card-body align-items-end">
 
+                                    <a href="@Url.Action("Details", new {id = item.Id})" class="btn btn-primary" style="font-size: 15px">
+                                        <i class="fa-solid fas fa-search"></i> Detalhes
+                                    </a>
 
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                                    <a href="@Url.Action("Edit", new {id = item.Id})" class="btn btn-secondary" style="font-size: 15px">
+                                        <i class="fa-solid fa fa-pencil"></i>
+                                    </a>
 
+                                    <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger" style="font-size: 15px">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
 
-            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
-    }
-
+    </div>
+    </div>
 

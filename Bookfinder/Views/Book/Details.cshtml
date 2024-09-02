@@ -5,7 +5,27 @@
 
 }
 
-<h1>Mais detalhes sobre @Model.Title</h1>
+<h1>Mais detalhes sobre <strong>@Model.Title</strong></h1>
+<hr />
+<p>Título original: @Model.Title</p>
+<p>Autor do livro: @Model.Author</p>
+<p>Categoria: @Model.Category</p>
+<p>Avaliação: @Model.Rating</p>
+<p>Avaliação: @Model.Comment</p>
+
+<div class="form-check">
+    <input asp-for="IsReaded" type="radio" id="readYes" value="true" class="form-check-input" />
+    <label class="form-check-label" for="readYes">
+        Yes
+    </label>
+</div>
+<div class="form-check">
+    <input asp-for="IsReaded" type="radio" id="readNo" value="false" class="form-check-input" />
+    <label class="form-check-label" for="readNo">
+        No
+    </label>
+</div>
+
 
 
 
