@@ -5,25 +5,48 @@
 
 }
 
-<h1>Mais detalhes sobre <strong>@Model.Title</strong></h1>
-<hr />
-<p>Título original: @Model.Title</p>
-<p>Autor do livro: @Model.Author</p>
-<p>Categoria: @Model.Category</p>
-<p>Avaliação: @Model.Rating</p>
-<p>Avaliação: @Model.Comment</p>
+<div class="container mt-4">
+    <h1>Mais detalhes sobre <strong>@Model.Title</strong></h1>
+    <hr />
 
-<div class="form-check">
-    <input asp-for="IsReaded" type="radio" id="readYes" value="true" class="form-check-input" />
-    <label class="form-check-label" for="readYes">
-        Yes
-    </label>
-</div>
-<div class="form-check">
-    <input asp-for="IsReaded" type="radio" id="readNo" value="false" class="form-check-input" />
-    <label class="form-check-label" for="readNo">
-        No
-    </label>
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <h5>Título original:</h5>
+            <p class="lead">@Model.Title</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Autor do livro:</h5>
+            <p class="lead">@Model.Author</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Categoria:</h5>
+            <p class="lead">@Model.Category</p>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <h5>Avaliação:</h5>
+            <p class="lead">@Model.Rating</p>
+        </div>
+        <div class="col-md-8">
+            <h5>Resenha:</h5>
+            <p>@Model.Comment</p>
+        </div>
+    </div>
+
+    <div class="form-check">
+        <input asp-for="IsReaded" type="radio" id="readYes" value="true" class="form-check-input" disabled/>
+        <label class="form-check-label" for="readYes">
+            Lido
+        </label>
+    </div>
+    <div class="form-check">
+        <input asp-for="IsReaded" type="radio" id="readNo" value="false" class="form-check-input" disabled/>
+        <label class="form-check-label" for="readNo">
+            Não Lido
+        </label>
+    </div>
 </div>
 
 
